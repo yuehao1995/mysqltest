@@ -1,0 +1,6 @@
+查询2017年总批复贷款数目
+SELECT  year(loan_date),sum(loan_money_amount)  FROM contract where year(loan_date)='2017'  group BY year(loan_date);
+查询2016年每月总批复贷款数目
+SELECT  year(loan_date),month(loan_date),sum(loan_money_amount)  FROM contract where YEAR(loan_date)='2016'  group BY year(loan_date),MONTH(loan_date);
+统计系统里每日总批复贷款数目
+SELECT  year(loan_date),month(loan_date),day(loan_date),sum(loan_money_amount)  FROM contract group BY year(loan_date),MONTH(loan_date);
